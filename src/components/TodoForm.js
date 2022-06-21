@@ -6,7 +6,7 @@ export default function TodoForm({onCreateTodo}) {
   return (
     <Form onSubmit={handleSubmit} aria-labelledby="form-title">
       <label htmlFor="todo-input">Todo description</label>
-      <input maxLength={100} id="todo-input" name="todo" />
+      <input maxLength={40} id="todo-input" name="todo" />
       <button>
         <ScreenReaderOnly id="form-title">Create new todo</ScreenReaderOnly>
         <span aria-hidden>+</span>
