@@ -4,11 +4,11 @@ import ScreenReaderOnly from './ScreenReaderOnly.js';
 
 export default function TodoForm({onCreateTodo}) {
   return (
-    <Form onSubmit={handleSubmit}>
+    <Form onSubmit={handleSubmit} aria-labelledby="form-title">
       <label htmlFor="todo-input">Todo description</label>
       <input maxLength={100} id="todo-input" name="todo" />
       <button>
-        <ScreenReaderOnly>Create new todo</ScreenReaderOnly>
+        <ScreenReaderOnly id="form-title">Create new todo</ScreenReaderOnly>
         <span aria-hidden>+</span>
       </button>
     </Form>
@@ -21,6 +21,7 @@ export default function TodoForm({onCreateTodo}) {
     if (description.length > 0) {
       onCreateTodo(description);
     }
+    form.reset();
   }
 }
 
