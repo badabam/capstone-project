@@ -9,4 +9,3 @@ export default {
 const Template = args => <TodoForm {...args} />;
 
 export const Default = Template.bind({});
-Default.args = {};
