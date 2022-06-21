@@ -29,6 +29,7 @@ const Form = styled.form`
   display: grid;
   gap: 6px;
   grid-template-columns: auto 48px;
+  background: white;
 
   label {
     grid-column: span 2;

@@ -24,11 +24,14 @@ export default function App() {
 
 const Grid = styled.main`
   display: grid;
+  align-content: start;
+  grid-template-rows: 1fr auto;
   height: 100vh;
   padding: 12px;
 `;
 
 const Scroller = styled.ul`
+  height: 100%;
   overflow-y: auto;
 `;
 
