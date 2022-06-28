@@ -2,13 +2,12 @@
 
 This is a template for a [Create React App](https://create-react-app.dev/) with additional tools.
 
-- [React App](#react-app)
-  - [Tech-Stack](#tech-stack)
-  - [Project Setup](#project-setup)
-    - [Set up Vercel](#set-up-vercel)
-  - [Getting started](#getting-started)
-  - [Test Driven Development](#test-driven-development)
-  - [Commands](#commands)
+- [Tech-Stack](#tech-stack)
+- [Project Setup](#project-setup)
+  - [Set up Vercel](#set-up-vercel)
+- [Getting started](#getting-started)
+- [Test Driven Development](#test-driven-development)
+- [Commands](#commands)
 
 It uses the following tools/libraries:
 
