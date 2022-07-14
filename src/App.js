@@ -1,4 +1,4 @@
-import {useEffect, useState} from "react";
+import {useState} from "react";
 import {Routes, Route, Navigate, useNavigate} from "react-router-dom"
 
 import LoginPage from "./pages/LoginPage";
@@ -7,10 +7,6 @@ import TodosPage from "./pages/TodosPage";
 export default function App() {
   const navigate = useNavigate()
   const [token, setToken] = useState()
-
-  useEffect(() => {
-    console.log({token})
-  },[token])
 
   return <Routes>
     <Route>
@@ -33,7 +29,7 @@ export default function App() {
   }
 
   function logout() {
-    console.log("logout")
+    setToken(undefined)
   }
 }
 
