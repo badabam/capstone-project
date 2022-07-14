@@ -14,7 +14,7 @@ export default function App() {
 
   return <Routes>
     <Route>
-      <Route index element={token ? <TodosPage onLogout={logout}/> : <Navigate to="/login"/>}/>
+      <Route index element={token ? <TodosPage onLogout={logout} token={token}/> : <Navigate to="/login"/>}/>
       <Route path="login" element={<LoginPage onLogin={login}/>}/>
     </Route>
   </Routes>

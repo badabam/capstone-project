@@ -4,15 +4,22 @@ import styled from "styled-components";
 import TodoForm from "../components/TodoForm";
 import TodoItem from "../components/TodoItem";
 
-export default function TodosPage({onLogout}){
+export default function TodosPage({onLogout, token}){
   const [todos, setTodos] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
+    if(!token){
+      return
+    }
     setIsLoading(true);
     setError(null);
-    fetch('/api/todos')
+    fetch('/api/todos',{
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
+    })
       .then(response => response.json())
       .then(todos => {
         setTodos(todos);
@@ -21,7 +28,7 @@ export default function TodosPage({onLogout}){
         setError(new Error('Oooops, something went wrong.'));
       })
       .finally(() => setIsLoading(false))
-  }, []);
+  }, [token]);
 
   return (
     <Grid>
@@ -48,14 +55,15 @@ export default function TodosPage({onLogout}){
     </Grid>
   );
 
-
-
   function addTodo(description) {
     setError(null);
     setIsLoading(true);
     fetch('/api/todos', {
       method: 'POST',
-      headers: {'Content-Type': 'application/json'},
+      headers: {
+        Authorization: `Bearer ${token}`,
+        'Content-Type': 'application/json'
+      },
       body: JSON.stringify({description: description}),
     })
       .then(response => response.json())
@@ -70,7 +78,10 @@ export default function TodosPage({onLogout}){
     const todo = todos[index];
     fetch('/api/todos/' + todo._id, {
       method: 'PATCH',
-      headers: {'Content-Type': 'application/json'},
+      headers: {
+        Authorization: `Bearer ${token}`,
+        'Content-Type': 'application/json'
+      },
       body: JSON.stringify({isDone: !todo.isDone}),
     })
       .then(response => response.json())
