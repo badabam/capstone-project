@@ -23,7 +23,7 @@ export default function LoginPage({onLogin}){
 
   function handleSubmit(event) {
     event.preventDefault()
-    onLogin()
+    onLogin(credentials)
   }
 
   function handleChange(event) {
