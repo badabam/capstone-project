@@ -12,3 +12,7 @@ export function createToken(user){
     name: user.username
   }, JWT_SECRET)
 }
+
+export function verifyAndDecodeToken(token){
+  return jwt.verify(token, JWT_SECRET)
+}

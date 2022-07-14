@@ -5,3 +5,17 @@ Content-Type: application/json
   "username": "Jan",
   "password": "password"
 }
+
+###
+
+GET http://localhost:3000/api/todos
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2MmNlYzM3MDg1OGFkOTY2YjJiMTBlYWYiLCJuYW1lIjoiSmFuIiwiaWF0IjoxNjU3Nzk0OTQyfQ.LIowkvAJBQJRbGfyYm0k9o7bZ0zSxkKOQTpH_cDUJDU
+
+###
+PATCH http://localhost:3000/api/todos/62ce9fd6a5f3c6364acf60e6
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2MmNlYzM3MDg1OGFkOTY2YjJiMTBlYWYiLCJuYW1lIjoiSmFuIiwiaWF0IjoxNjU3Nzk0OTQyfQ.LIowkvAJBQJRbGfyYm0k9o7bZ0zSxkKOQTpH_cDUJDU
+Content-Type: application/json
+
+{
+  "isDone": true
+}
